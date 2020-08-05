@@ -49,9 +49,9 @@ function GetCoinTextureStringExt(money)
     end
 
     if money >= 0 then
-        return ReformatNumberString(GetCoinTextureString(money), 12)
+        return ReformatNumberString(GetCoinTextureString(money))
     else
-        return "-"..ReformatNumberString(GetCoinTextureString(money * -1), 12)
+        return "-"..ReformatNumberString(GetCoinTextureString(money * -1))
     end
 end
 
