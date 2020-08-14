@@ -1,10 +1,10 @@
 local ADDON, Addon = ...
 
 function ItemTooltipHook(tooltip)
-	local itemName, itemLink = tooltip:GetItem()
-	if not itemLink then
-		return
-	end
+    local itemName, itemLink = tooltip:GetItem()
+    if not itemLink then
+        return
+    end
 
     local _, itemId, _, _, _, _, _, _, uniqueId, linkLevel, _, _, _, _ = strsplit(":", itemLink)
 
