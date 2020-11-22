@@ -13,7 +13,11 @@ function ItemTooltipHook(tooltip)
         return
     end
 
-    PriceHook(tooltip, itemPrice["min"], itemPrice["mode"])--, itemId)
+    local count = GetItemCount(itemId)
+    local min = itemPrice["min"] * count
+    local mode = itemPrice["mode"] * count
+
+    PriceHook(tooltip, min, mode)--, itemId)
 end
 
 function PetTooltipHook(speciesId, level, quality, health, power, speed, customName)
