@@ -37,9 +37,9 @@ function PriceHook(tooltip, min, mode, minTotal, modeTotal, id)
         extra = " [" .. id .. "]"
     end
 
-    tooltip:AddLine("AH Price:    " .. GetCoinTextureStringExt(min) .. " (" .. GetCoinTextureStringExt(mode) .. ")" .. extra, 1, 1, 1, false)
+    tooltip:AddLine("AH Price:     " .. GetCoinTextureStringExt(min) .. " (" .. GetCoinTextureStringExt(mode) .. ")" .. extra, 1, 1, 1, false)
     if minTotal and minTotal ~= min and modeTotal then
-        tooltip:AddLine("                   " .. GetCoinTextureStringExt(minTotal) .. " (" .. GetCoinTextureStringExt(modeTotal) .. ")", 1, 1, 1, false)
+        tooltip:AddLine("                      " .. GetCoinTextureStringExt(minTotal) .. " (" .. GetCoinTextureStringExt(modeTotal) .. ")", 1, 1, 1, false)
     end
 end
 
