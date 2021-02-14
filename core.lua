@@ -14,10 +14,12 @@ function ItemTooltipHook(tooltip)
     end
 
     local count = GetItemCount(itemId)
-    local min = itemPrice["min"] * count
-    local mode = itemPrice["mode"] * count
+    local min = itemPrice["min"]
+    local minTotal = itemPrice["min"] * count
+    local mode = itemPrice["mode"]
+    local modeTotal = itemPrice["mode"] * count
 
-    PriceHook(tooltip, min, mode)--, itemId)
+    PriceHook(tooltip, min, mode, minTotal, modeTotal)--, itemId)
 end
 
 function PetTooltipHook(speciesId, level, quality, health, power, speed, customName)
@@ -29,13 +31,16 @@ function PetTooltipHook(speciesId, level, quality, health, power, speed, customN
     PriceHook(BattlePetTooltip, itemPrice["min"], itemPrice["mode"])--, speciesId)
 end
 
-function PriceHook(tooltip, min, mode, id)
+function PriceHook(tooltip, min, mode, minTotal, modeTotal, id)
     local extra = ""
     if id then
         extra = " [" .. id .. "]"
     end
 
     tooltip:AddLine("AH Price:    " .. GetCoinTextureStringExt(min) .. " (" .. GetCoinTextureStringExt(mode) .. ")" .. extra, 1, 1, 1, false)
+    if minTotal and minTotal ~= min and modeTotal then
+        tooltip:AddLine("                   " .. GetCoinTextureStringExt(minTotal) .. " (" .. GetCoinTextureStringExt(modeTotal) .. ")", 1, 1, 1, false)
+    end
 end
 
 function AddCommas(pre, post)
