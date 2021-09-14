@@ -1,8 +1,7 @@
-## Interface: 90005
+## Interface: 90100
 ## Title: BetterItemPrices
 ## Notes: Auction house prices for items
 ## Author: Banksy
-## Version: 1.0
 
 db.lua
 core.lua
