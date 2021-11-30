@@ -1,4 +1,4 @@
-## Interface: 90100
+## Interface: 90105
 ## Title: BetterItemPrices
 ## Notes: Auction house prices for items
 ## Author: Banksy
